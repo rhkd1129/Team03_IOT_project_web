@@ -35,5 +35,12 @@ public class HomeController {
 		LOGGER.info("UI 디자인 view");		
 		return "home/UIView";
 	}
+	
+	@RequestMapping("/joystick.do")
+	public String joystick() {
+		LOGGER.info("실행");
+						
+		return "home/joystick";
+	}
 
 }

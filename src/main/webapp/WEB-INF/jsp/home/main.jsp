@@ -42,6 +42,9 @@
 	    <li class="nav-item">
 	      <a class="nav-link" id="link2" href="${pageContext.request.contextPath}/CarView2/Carmain2.do">Carmain2</a>
 	    </li>
+	    <li class="nav-item">
+	      <a class="nav-link" id="link2" href="${pageContext.request.contextPath}/home/joystick.do">joystick</a>
+	    </li>
 	  </ul>
 	</nav>
 
