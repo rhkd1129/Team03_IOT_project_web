@@ -1040,23 +1040,18 @@ var chartSpeed = Highcharts.chart('container-speed', Highcharts.merge(gaugeOptio
 
 // Bring life to the dials
 setInterval(function () {
-    // Speed
-    var point,
-        newVal,
-        inc;
-
+	 var point, newVal, inc;
     if (chartSpeed) {
         point = chartSpeed.series[0].points[0];
         inc = Math.round((255-checkillumination)/255 * 100);
-        newVal = point.y + inc;
-
-        if (newVal < 0 || newVal > 200) {
-            newVal = point.y - inc;
+        
+		if ( inc >= 0 || inc <= 100) {
+            newVal = inc;
         }
 
-        point.update(checkillumination);
+        point.update(inc);
     }
-}, 200);
+}, 400);
 
 
 //가스 센서
@@ -1144,16 +1139,15 @@ Highcharts.chart('gascontainer', {
               if (chart.series) { // the chart may be destroyed
                   var left = chart.series[0].points[0],
                       leftVal,
-                      inc = (parseInt(checkgas) / 255)* 100;
+                      inc = parseInt((checkgas/ 255)* 100);
    
-                  leftVal = inc;
-                  if (leftVal < 0 || checkgas > 100) {
-                      leftVal = 100 - inc;
+                  if (inc >=0 || inc <=100) {
+                      leftVal =  inc;
                   }
-                  left.update(checkgas, false);
+                  left.update(leftVal, false);
                   chart.redraw();
               }
-          }, 500);
+          }, 30);
    
       });
 </script>
