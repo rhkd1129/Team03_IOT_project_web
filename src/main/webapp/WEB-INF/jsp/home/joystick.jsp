@@ -19,8 +19,6 @@
 		<script src="https://code.highcharts.com/modules/exporting.js"></script>
 		<script src="https://code.highcharts.com/modules/export-data.js"></script>
 		<script src="https://code.highcharts.com/modules/accessibility.js"></script>
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/viewmaincss.css">
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/gauge.css">
 		<script>
 			$(function(){
 				client = new Paho.MQTT.Client("192.168.3.163", 61614, new Date().getTime().toString());
@@ -91,6 +89,15 @@
 
 				client.send(message); 
 			}
+			
+			function SpeedSetting(value) {  //속도 설정하는거 컨트롤러 6번 축
+	            var axesValue = "axesValue:" + value;
+	            var message = new Paho.MQTT.Message(axesValue);
+	            message.destinationName = "/Controller/Move/Speed";
+	            message.qos = 0;
+
+	            client.send(message);
+	         } 
 		
 			function MoveForward(value) {
 				var axesValue = "axesValue:" + value;
@@ -250,12 +257,12 @@
 		  		}
 		  	} 
 		  	
-		  	if (gp.axes[0]>0.05){
-		  		TurnDirection(gp.axes[0])  //오른쪽       
-		  	} 
-		  	
 		  	if (gp.axes[0]<-0.05){ // 여기가 axes 
 		  		TurnDirection(gp.axes[0])   //왼쪽    
+		  	}
+		  	
+		  	if (gp.axes[0]>0.05){
+		  		TurnDirection(gp.axes[0])  //오른쪽       
 		  	} 
 		  	
 		  	if (gp.axes[5]<-0.05){
@@ -266,7 +273,11 @@
 		  		TurnSensor(gp.axes[5])		  		
 		  	}
 		  	
-		  	if (gp.axes[9]){
+		  	if (gp.axes[6]){  //6번 축 최대 속도 값 조정
+		  		SpeedSetting(gp.axes[6])
+		  	}
+		  	
+		  	if (gp.axes[9]){  
 		  		CameraMove(gp.axes[9])
 		  	}
 		  	
