@@ -1,0 +1,246 @@
+@charset "UTF-8";
+
+#handimgF{
+	width: 250px;
+	height:250px;
+	border-radius:85px; 
+	z-index: 9999;
+	margin-top: -900px;
+	margin-left: 450px;
+}
+
+#break{
+	width: 100px;
+	height:100px;
+	border-radius:85px; 
+	z-index: 9999;
+	margin-top: -600px;
+	margin-left: -50px;
+}
+
+#acel{
+	width: 80px;
+	height:80px;
+	border-radius:85px; 
+	z-index: 9999;
+	margin-top: -600px;
+	margin-left: -70px;
+}
+
+#Carimg{
+	width: 100%;
+	height: 800px;
+	margin-left: -1920px;
+	z-index: 999;
+	
+}
+
+.mainbox{
+	width: 100%;
+	height: 800px;
+	background-color: #E6E6E6;
+}
+
+.cameracontroller{
+	float: left;
+	margin-left: 0px;
+}
+
+#cameraView{
+	width:1920px;
+	height: 350px;
+}
+
+.movebutton{
+	background-color: #E6E6E6;
+	width: 400px;
+	height: 100px;
+	margin-left: 50px;
+	margin-top: 50px;
+	float: left;
+}
+
+
+
+
+
+
+
+
+/* button css start--------- */
+.sensorcontroller{
+	width: 300px;
+	height: 300px;
+	float: left;
+	background-color: #E6E6E6;
+	margin-top: 0px;
+	margin-left: 50px;
+}
+
+.hichar2{
+	float: left;
+	margin-left: 600px;
+}
+
+#left{
+	position: absolute;
+	margin-left: 50px;
+	margin-top: 35px;
+	color: #fff;
+    background-color: #bd2130;
+    border-color: #b21f2d;
+    width: 30px;
+    height: 30px;
+	text-align: center;
+	line-height: 0px;
+}
+
+#right{
+	position: absolute;	
+	margin-left: 120px;
+	margin-top: 35px;
+	color: #fff;
+    background-color: #bd2130;
+    border-color: #b21f2d;
+    width: 30px;
+    height: 30px;
+	text-align: center;
+	line-height: 0px;
+}
+
+#up{
+	position: absolute;	
+	margin-left: 85px;
+	color: #fff;
+    background-color: #bd2130;
+    border-color: #b21f2d;
+    width: 30px;
+    height: 30px;
+	text-align: center;
+	line-height: 0px;
+}
+
+#down{
+	position: absolute;
+	margin-left: 85px;	
+	margin-top: 70px;
+    color: #fff;
+    background-color: #bd2130;
+    border-color: #b21f2d;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+	line-height: 0px;
+}
+
+#stop{
+	position: absolute;
+	margin-left: 85px;	
+	margin-top: 35px;
+    color: #fff;
+    background-color: #bd2130;
+    border-color: #b21f2d;
+    width: 30px;
+    height: 30px;
+	text-align: center;
+	line-height: 0px;
+}
+
+#RGBLEDON{
+	position: absolute;
+	margin-left: 190px;	
+	margin-top: 35px;
+    color: #fff;
+    background-color: #bd2130;
+    border-color: #b21f2d;
+    width: 30px;
+    height: 30px;
+	text-align: center;	
+	line-height: 0px;
+}
+
+#RGBLEDOFF{
+	position: absolute;
+	margin-left: 230px;	
+	margin-top: 35px;
+    color: #fff;
+    background-color: #bd2130;
+    border-color: #b21f2d;
+    width: 30px;
+    height: 30px;
+	text-align: center;	
+	line-height: 0px;
+}
+
+/* button css end--------- */
+
+
+
+
+
+
+
+
+
+/* hichart 온도 그래프 */
+.highcharts-figure, .highcharts-data-table table {
+  min-width: 320px; 
+  max-width: 800px;
+  margin: 1em auto;
+}
+
+#container {
+  height: 400px;
+}
+
+.highcharts-data-table table {
+  font-family: Verdana, sans-serif;
+  border-collapse: collapse;
+  border: 1px solid #EBEBEB;
+  margin: 10px auto;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+}
+.highcharts-data-table caption {
+  padding: 1em 0;
+  font-size: 1.2em;
+  color: #555;
+}
+.highcharts-data-table th {
+  font-weight: 600;
+  padding: 0.5em;
+}
+.highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+  padding: 0.5em;
+}
+.highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+  background: #f8f8f8;
+}
+.highcharts-data-table tr:hover {
+  background: #f1f7ff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
