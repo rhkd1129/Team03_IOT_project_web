@@ -101,7 +101,9 @@
 		
 			function MoveForward(value) {
 				var axesValue = "axesValue:" + value;
+				console.log(axesValue);
 				var message = new Paho.MQTT.Message(axesValue);
+				
 				message.destinationName = "/Controller/Move/Forward";
 				message.qos = 0;
 

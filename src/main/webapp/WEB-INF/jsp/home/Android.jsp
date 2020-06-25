@@ -23,30 +23,29 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-<!-- CSS -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/main/Androidcss.css">
+<!-- HICHART -->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<!-- Lux HICHART -->
+<script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
 
 <!-- MQTT -->
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/main/Androidcss.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
+
+<!-- APPLICATION -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 <body>
-	<!-- 갤럭시9 해상도 1410px × 2250px -->
-	<!--nav start---------------------------------------------------------------------------------------  -->
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-	  <!-- Brand -->
-	  <img id="logoimg2" src="${pageContext.request.contextPath}/resource/img/main/Team3.png">
-	  <div class="TeamName">TEAM3</div>
-	  <div class="jumpbox"></div>
-	  <!-- Links -->
-	  <ul class="navbar-nav">
-	    <li class="nav-item">
-	      <a class="nav-link" id="link1" href="${pageContext.request.contextPath}/CarView1/Carmain1.do">Carmain1</a>
-	    </li>
-	    <li class="nav-item">
-	      <a class="nav-link" id="link2" href="${pageContext.request.contextPath}/CarView2/Carmain2.do">Carmain2</a>
-	    </li>
-	  </ul>
-	</nav>
+	<!-- 상단 nav바 -->
+	<div class="navbar">
+		<img id="navimglogo" src="${pageContext.request.contextPath}/resource/img/main/Team3.png">
+		<div class="textmain">Android View</div>
+	</div>
 
 	<!--body start---------------------------------------------------------------------------------------  -->
 	<div class="bodymainbox">
@@ -62,101 +61,147 @@
 			      <span class="mo-menu-title">TEAM3 Page</span>
 			      <ul>
 			        <li class="menu-label"><a href="${pageContext.request.contextPath}/home/main.do">메인 페이지</a></li>
-			        <li class="sub-menu"><a href="${pageContext.request.contextPath}/introduce/memberintroduce.do">팀원 소개</a></li>
+			        <li class="sub-menu"><a href="${pageContext.request.contextPath}/introduce/memberintroduce.do">안드로이드 소개</a></li>
 			        <li class="menu-label"><a href="${pageContext.request.contextPath}/introduce/sensorintroduce.do">부품 소개</a></li>
 			        <li class="sub-menu"><a href="${pageContext.request.contextPath}/CarView1/Carmain1.do">센서 차트 페이지</a></li>
 			        <li class="menu-label"><a href="${pageContext.request.contextPath}/CarView2/Carmain2.do">차량 조종 페이지</a></li>
-			        <li class="sub-menu"><a href="${pageContext.request.contextPath}/home/UIView.do">차량 실험 페이지</a></li>
 			        <li class="sub-menu"><a href="${pageContext.request.contextPath}/home/Android.do">안드로이드 뷰 페이지</a></li>
+			        <li class="menu-label"><a href="${pageContext.request.contextPath}/home/UIView.do">차량 실험 페이지</a></li>
 			      </ul>
 			</div><!--메뉴전체 판넬 -->
 			
 			 <!--메뉴 밖에 어두워지는 부분-->
 			<div class="panel-overlay"></div>
 
-			
-			
+<!-- ---------------------------------------------------------------------------------------------------- -->					
+			<!-- 자동차 화면 뷰 메인 박스 -->
 			<div class="bodymain">
-<!-- 				차 이름 및 소개 -->
-				<div class="CarIntroduce">
-					<div class="Team3Car1">Team3 no.1 Car</div>
-					<div class="Team3Car2">Team3 no.2 Car</div>					
-				</div>
+				<div class="Car2Introduce">Android View</div>				
+				<div class="memberimgbox1">
+					<img id ="cameraView">					
+					<img id="controllimg" src="${pageContext.request.contextPath}/resource/img/투명/투명제거.png">
 				
-<!-- 				1번차 이미지 슬라이드 -->
-				<div class="w3-content w3-section" style="max-width:449px; float: left;">
-					<img class="mySlides1" src="${pageContext.request.contextPath}/resource/img/main/차1/TeamCar01.jpg" style="width:449px">
-					<img class="mySlides1" src="${pageContext.request.contextPath}/resource/img/main/차1/TeamCar02.jpg" style="width:449px">
-					<img class="mySlides1" src="${pageContext.request.contextPath}/resource/img/main/차1/TeamCar03.jpg" style="width:449px">
-					<img class="mySlides1" src="${pageContext.request.contextPath}/resource/img/main/차1/TeamCar04.jpg" style="width:449px">
-					<img class="mySlides1" src="${pageContext.request.contextPath}/resource/img/main/차1/TeamCar05.jpg" style="width:449px">
-					<img class="mySlides1" src="${pageContext.request.contextPath}/resource/img/main/차1/TeamCar06.jpg" style="width:449px">
-				</div>
-
-<!-- 				2번차 이미지 슬라이드 -->
-				<div class="w3-content w3-section" style="max-width:449px; float: left;">
-					<img class="mySlides2" src="${pageContext.request.contextPath}/resource/img/main/차2/TeamCar07.jpg" style="width:449px">
-					<img class="mySlides2" src="${pageContext.request.contextPath}/resource/img/main/차2/TeamCar08.jpg" style="width:449px">
-					<img class="mySlides2" src="${pageContext.request.contextPath}/resource/img/main/차2/TeamCar09.jpg" style="width:449px">
-					<img class="mySlides2" src="${pageContext.request.contextPath}/resource/img/main/차2/TeamCar10.jpg" style="width:449px">
-					<img class="mySlides2" src="${pageContext.request.contextPath}/resource/img/main/차2/TeamCar11.jpg" style="width:449px">
-					<img class="mySlides2" src="${pageContext.request.contextPath}/resource/img/main/차2/TeamCar12.jpg" style="width:449px">
+					<!-- 자동차 부품 이미지 -->
+					<img id="handimgF" src="${pageContext.request.contextPath}/resource/img/UIimg/HAND.png">
+					<img id="break" src="${pageContext.request.contextPath}/resource/img/UIimg/break.png">
+					<img id="acel" src="${pageContext.request.contextPath}/resource/img/UIimg/acel.png">
+					
+					<!-- 1번 레이저 센서 똑딱이 버튼 -->						
+					<img id="on" src="${pageContext.request.contextPath}/resource/img/투명/전원on.png">
+					<img id="off" src="${pageContext.request.contextPath}/resource/img/투명/전원off.png">
+				
+					<!-- 2번 부저 센서 똑딱이 버튼 -->						
+					<img id="on2" src="${pageContext.request.contextPath}/resource/img/투명/전원on.png">
+					<img id="off2" src="${pageContext.request.contextPath}/resource/img/투명/전원off.png">
+				
+					<!-- 3번 빨파초 센서 똑딱이 버튼 -->						
+					<img id="on3" src="${pageContext.request.contextPath}/resource/img/투명/전원on.png">
+					<img id="off3" src="${pageContext.request.contextPath}/resource/img/투명/전원off.png">
 				</div>						
-			</div>						
-		</div>						
+			</div>
+			
+			<!-- 자동차 컨트롤 메인 박스 -->
+			<div class="bodymain2">	
+				<div class="Car2Introduce2">Android Control</div>		
+				<div class="memberimgbox2">
+					<!-- hichart view box -->
+					<div class="hichartbox1">
+						<!-- 조도 차트 -->
+						<div class="sensorbox1">
+							<figure class="highcharts-figure3">
+							    <div id="container3"></div>
+							</figure>
+						</div>	
+						
+						<!-- 온도 차트 -->
+						<div class="sensorbox1">
+							<figure class="highcharts-figure2">
+							    <div id="container2"></div>
+							</figure>	
+						</div>				
+					</div>
+					
+					<div class="hichartbox2">
+						<!-- 게이지 차트 -->
+						<div class="sensorbox2">
+							<figure class="highcharts-figure1">
+							    <div id="container1"></div>
+							</figure>
+						</div>			
+						
+						<!-- 센서 차트 -->
+						<div id="sensorbox2">
+							<div class="sensortext">
+								<div class="textname" id="textname">초음파 센서 : (Hz)</div> 
+								<input id="sonicDistance" type="text" readonly="readonly" value="0">
+							</div>
+							<div class="sensortext">
+								<div class="textname">온도 센서 : (℃)</div> 
+								<input id="temperature" type="text" readonly="readonly" value="0">
+							</div>			
+							<div class="sensortext">
+								<div class="textname">조도 센서 : (Lux)</div> 
+								<input id="illumination" type="text" readonly="readonly" value="0">
+							</div>			
+							<div class="sensortext">
+								<div class="textname">가스 센서 : (gas)</div> 
+								<input id="gas" type="text" readonly="readonly" value="0">
+							</div>			
+							<div class="sensortext">
+								<div class="textname">트래킹 센서 : (B/W)</div> 
+								<input id="tracking" type="text" readonly="readonly" value="0">
+							</div>			
+							<div id="sensortext">
+								<div class="textname">속도 센서 : (PWM)</div> 
+								<input id="speed" type="text" readonly="readonly" value="0">
+							</div>			
+						</div>	
+					</div>					
+					
+					<div class="sensorpathbox">
+						<div class="movebutton">
+							<!-- 자동차 조종 방향키 -->
+							<button class="btn btn-danger btn-sm" id="left">◀</button>
+							<button class="btn btn-danger btn-sm" id="right">▶</button>
+							<button class="btn btn-danger btn-sm" id="up">▲</button>
+							<button class="btn btn-danger btn-sm" id="down">▼</button>
+							<button class="btn btn-danger btn-sm" id="stop">■</button>
+							
+							<!-- 1번 : 빨강 / 2번 : 파랑 / 3번 : 초록 -->
+							<div class="lazerrgb"></div>
+							<div class="buzzerrgb"></div>
+							<div class="rgbrgb"></div>
+							
+							<!-- 1번 : 레이저 / 2번 : 부저 / 3번 : Rgb 불빛 / 4번 : Lcd 입력 -->
+							<button class="btn btn-danger btn-sm" id="Lazer">●</button>
+							<button class="btn btn-danger btn-sm" id="Buzzer">◎</button>
+							<button class="btn btn-danger btn-sm" id="Rgb">ο</button>
+							
+							<!-- 카메라 회전 방향키 -->
+							<button class="btn btn-danger btn-sm" id="left1">◁</button>
+							<button class="btn btn-danger btn-sm" id="right1">▷</button>
+							<button class="btn btn-danger btn-sm" id="up1">△</button>
+							<button class="btn btn-danger btn-sm" id="down1">▽</button>						
+						</div>	
+					</div>				
+
+				</div>						
+			</div>			
+
+		</div>
 	</div>
 </body>
 <!-- -------------------------------------------------------------------------------- -->
 <script type="text/javascript">
-/* 이미지 슬라이드 script start----------------------------------------------------------- */
-var myIndex = 0;
-carousel();
+$("#on").hide();
+$("#off").show();
 
-function carousel() {
-    var i;
-    var x = document.getElementsByClassName("mySlides1");
-    for (i = 0; i < x.length; i++) {
-       x[i].style.display = "none";  
-    }
-    myIndex++;
-    if (myIndex > x.length) {myIndex = 1}    
-    x[myIndex-1].style.display = "block";  
-    setTimeout(carousel, 2000); // Change image every 2 seconds
-}
-//---------------------
-var myIndex1 = 0;
-carousel2();
+$("#on2").hide();
+$("#off2").show();
 
-function carousel2() {
-    var a;
-    var s = document.getElementsByClassName("mySlides2");
-    for (a = 0; a < s.length; a++) {
-       s[a].style.display = "none";  
-    }
-    myIndex1++;
-    if (myIndex1 > s.length) {myIndex1 = 1}    
-    s[myIndex1-1].style.display = "block";  
-    setTimeout(carousel2, 2000); // Change image every 2 seconds
-}
+$("#on3").hide();
+$("#off3").show();
 
-/* 이미지 슬라이드 script end----------------------------------------------------------- */
-/* 차량 이름 css */
-$(".Team3Car1").mouseover(function(){
-	$(".Team3Car1").css("color","#FA5858");
-	$(".Team3Car1").css("background-color","#F5D0A9");
-});
-$(".Team3Car1").mouseout(function(){
-	$(".Team3Car1").css("color","black");
-	$(".Team3Car1").css("background-color","#E6E6E6");
-});
-$(".Team3Car2").mouseover(function(){
-	$(".Team3Car2").css("color","#FA5858");
-	$(".Team3Car2").css("background-color","#F5D0A9");	
-});
-$(".Team3Car2").mouseout(function(){
-	$(".Team3Car2").css("color","black");
-	$(".Team3Car2").css("background-color","#E6E6E6");	
-});
 
 /* 각각 차 화면 이동 */
 $(".Team3Car1").click(function(){
@@ -172,7 +217,6 @@ $("#logoimg2").click(function(){
 $(".TeamName").click(function(){
 	location.href = "${pageContext.request.contextPath}/home/main.do"
 });
-
 
 //menu-------------------------------------
 $(document).ready(function(){
@@ -193,17 +237,1254 @@ $(document).ready(function(){
 
 });
 
+/* MQTT------------------------------------------ */
+/* 센서 객체 전역변수 및 임시 값 설정 */
+var checkgas = 0;
+var checkillumination = 0;
+var checkspeed = 0;
+var checktemperature = 0;
 
+/* MQTT 연결 (광휘컴퓨터) */
+$(function(){
+	client = new Paho.MQTT.Client("192.168.3.163", 61614, new Date().getTime().toString());
+	client.onMessageArrived = onMessageArrived;
+	client.connect({onSuccess:onConnect});
+});
 
+/* 연결 완료 및 클라이언트 값 구독 */
+function onConnect() {
+	console.log("mqtt broker connected")
+	client.subscribe("/sensor");
+	client.subscribe("/camerapub");
+}
 
+/* 구독한 메세지 받는 객체 생성 */
+function onMessageArrived(message) {
+	if(message.destinationName == "/camerapub") {
+		var cameraView = $("#cameraView").attr(
+				"src", "data:image/jpg;base64,"+message.payloadString);
+	}
+	
+	if(message.destinationName == "/sensor") {
+		var sonicDistance = $("#sonicDistance").attr(
+				"value", JSON.parse(message.payloadString).sonic_distance);
+												
+		var temperature = $("#temperature").attr(
+				"value", JSON.parse(message.payloadString).temperature);
 
+		var illumination = $("#illumination").attr(
+				"value", JSON.parse(message.payloadString).illumination);
 
+		var gas = $("#gas").attr(
+				"value", JSON.parse(message.payloadString).gas);
+		
+		var tracking = $("#tracking").attr(
+				"value", JSON.parse(message.payloadString).tracking);
+		
+		var speed = $("#speed").attr(
+				"value", JSON.parse(message.payloadString).speed);
+		
+// 		console.log("----------------------------")
+		/* 객체 생성 후 View에 뿌려줄 값 int타입으로 변환 */
+		/* 가스 */
+ 		var changegas = JSON.parse(message.payloadString).gas;
+		 checkgas = parseInt(changegas);	
+// 		 console.log("가스:"+checkgas)
+		 
+		/* 조도 */
+ 		var changeill = JSON.parse(message.payloadString).illumination;
+		 checkillumination = parseInt(changeill);
+// 		 console.log("조도:"+checkillumination)
+		 
+		/* 속력 */
+		 var changespeed = JSON.parse(message.payloadString).speed;
+	       checkspeed = parseInt(changespeed);      
+// 		 console.log("속도:"+checkspeed)
+		 
+		/* 온도 */
+ 		var changetem = JSON.parse(message.payloadString).temperature;
+		 checktemperature = parseInt(changetem);
+// 		 console.log("온도:"+checktemperature)
+	}
+		
+}
+			 
+	/* Rgb 불빛 센서 on */
+	function LedOn() {
+		
+		var message = new Paho.MQTT.Message("ledOn");
+		message.destinationName = "/Control/RgbLed";
+		message.qos = 0;
 
+		client.send(message);
+	}
+	/* Rgb 불빛 센서 off */
+	function LedOff() {
+		
+		var message = new Paho.MQTT.Message("ledOff");
+		message.destinationName = "/Control/RgbLed";
+		message.qos = 0;
 
+		client.send(message);
+	}
+	/* buzzer on */
+	function BuzzerOn() {
+		
+		console.log("부저실행")
+		var message = new Paho.MQTT.Message("buzzerOn");
+		message.destinationName = "/Control/Buzzer";
+		message.qos = 0;
 
+		client.send(message);
+	}
+	/* buzzer off */
+	function BuzzerOff() {
+		
+		var message = new Paho.MQTT.Message("buzzerOff");
+		message.destinationName = "/Control/Buzzer";
+		message.qos = 0;
 
+		client.send(message);
+	}
+	/* 차량 좌회전 */
+	function TurnLeft() {
+		
+		var message = new Paho.MQTT.Message("left");
+		message.destinationName = "/Control/Direction/FrontWheel";
+		message.qos = 0;
 
+		client.send(message); 
+		
+	}
+	/* 차량 우회전 */
+	function TurnRight() {
+		
+		var message = new Paho.MQTT.Message("right");
+		message.destinationName = "/Control/Direction/FrontWheel";
+		message.qos = 0;
 
+		client.send(message); 
+		
+	}
+	/* 차량 정지 */
+	function TurnStop() {
+		
+		var message = new Paho.MQTT.Message("stop");
+		message.destinationName = "/Control/Direction/FrontWheel";
+		message.qos = 0;
+
+		client.send(message); 
+		
+	}
+	/* 카메라 고개 들기 */
+	function CameraUp() {
+		
+		var message = new Paho.MQTT.Message("up");
+		message.destinationName = "/Control/Direction/Camera";
+		message.qos = 0;
+
+		client.send(message); 
+		
+	}
+	/* 카메라 고개 내리기 */
+	function CameraDown() {
+		
+		var message = new Paho.MQTT.Message("down");
+		message.destinationName = "/Control/Direction/Camera";
+		message.qos = 0;
+
+		client.send(message); 
+		
+	}
+	/* 카메라 고개 좌회전 */
+	function CameraLeft() {
+		
+		var message = new Paho.MQTT.Message("left");
+		message.destinationName = "/Control/Direction/Camera";
+		message.qos = 0;
+
+		client.send(message); 
+		
+	}
+	/* 카메라 고개 우회전 */
+	function CameraRight() {
+		console.log("실행")
+		var message = new Paho.MQTT.Message("right");
+		message.destinationName = "/Control/Direction/Camera";
+		message.qos = 0;
+
+		client.send(message); 
+// 		console.log("실행 완료")
+	}
+	/* 카메라 회전 중지 */
+	function CameraTurnStop() {
+// 		console.log("실행")
+		var message = new Paho.MQTT.Message("stop");
+		message.destinationName = "/Control/Direction/Camera";
+		message.qos = 0;
+
+		client.send(message); 
+// 		console.log("실행 완료")
+	}
+	/* 카메라 수평 회전 중지 */
+	function CameraHorizonTurnStop() {
+// 		console.log("실행")
+		var message = new Paho.MQTT.Message("horizonstop");
+		message.destinationName = "/Control/Direction/Camera";
+		message.qos = 0;
+
+		client.send(message); 
+// 		console.log("실행 완료")
+	}
+	/* 모터 start */
+	function MotorAccel() {
+		var message = new Paho.MQTT.Message("accel");
+		message.destinationName = "/Control/Motor";
+		message.qos = 0;
+
+		client.send(message);
+		
+	}
+	/* 모터 end */	
+	function MotorBreak() {
+		var message = new Paho.MQTT.Message("break");
+		message.destinationName = "/Control/Motor";
+		message.qos = 0;
+
+		client.send(message);
+		
+	}
+	
+	function MotorBackword() {
+		
+		var message = new Paho.MQTT.Message("backword");
+		message.destinationName = "/Control/Motor";
+		message.qos = 0;
+
+		client.send(message);
+		
+	}
+	/* 레이저 on */
+	function laserOn() {
+		var message = new Paho.MQTT.Message("on");
+		message.destinationName = "/Control/Laser";
+		message.qos = 0;
+
+		client.send(message);	   
+	}
+	/* 레이저 off */
+	function laserOff() {
+		var message = new Paho.MQTT.Message("off");
+		message.destinationName = "/Control/Laser";
+		message.qos = 0;
+
+		client.send(message);	   
+	}  
+	/* lcd 불빛 전송 */
+	function lcdSend() {
+		
+		var lcdcontent = $("#lcdcontent").val();    
+		console.log(lcdcontent)
+		var message = new Paho.MQTT.Message(lcdcontent);
+		message.destinationName = "/Control/Lcd";
+		message.qos = 0;
+
+		client.send(message);
+	}
+	
+   /* 키 안에 담는 객체 = 꼭필요 중요★★★★★ --------------------------------------------------------------------- */
+	var keyValue = {};
+   
+   
+   /* 키를 땟을 때 ----------------------------------------------------------------------- */        
+   function stopInterval(action){	
+	   
+	   /* 자동차 조종 터치 땠을 때 */	   
+	   if(action == false){
+         $("#up").css("background-color", "#bd2130");
+         $("#up").css("border-color", "#FF0000");
+         
+         $("#acel").css("width","70px");
+         $("#acel").css("height","70px");  
+	   }
+	   
+	   if(action == false){
+         $("#stop").css("background-color", "#bd2130");
+         $("#stop").css("border-color", "#FF0000");
+         
+
+         $("#break").css("width","90px");
+         $("#break").css("height","90px");
+         $("#break").css("margin-right","0px"); 
+	   }
+	   
+	   if(action == false){
+         $("#down").css("background-color", "#bd2130");
+         $("#down").css("border-color", "#FF0000");
+	   }	   
+	   
+	   if(action == false){
+         $("#left").css("background-color", "#bd2130");
+         $("#left").css("border-color", "#FF0000");
+
+         
+         $("#handimgF").css("transition", "transform 0.5s")
+   	     $("#handimgF").css("transform", "rotate(0deg)")
+	   }
+	   
+	   if(action == false){
+         $("#right").css("background-color", "#bd2130");
+         $("#right").css("border-color", "#FF0000");
+ 
+         
+         $("#handimgF").css("transition", "transform 0.5s")
+   	     $("#handimgF").css("transform", "rotate(0deg)")
+	   }	   
+	   
+	   //카메라 조종 터치 땠을 때-------------	   
+	   if(action == false){
+         $("#up1").css("background-color", "#bd2130");
+         $("#up1").css("border-color", "#FF0000");
+   
+	   }
+	   
+	   if(action == false){
+         $("#down1").css("background-color", "#bd2130");
+         $("#down1").css("border-color", "#FF0000");
+
+	   }	  
+	   
+	   if(action == false){
+         $("#left1").css("background-color", "#bd2130");
+         $("#left1").css("border-color", "#FF0000");
+
+	   }
+	   
+	   if(action == false){
+         $("#right1").css("background-color", "#bd2130");
+         $("#right1").css("border-color", "#FF0000");
+
+	   }		   
+
+	   //센서 조종 터치 땠을 때-------------	   
+	   if(action == false){
+         $("#Lazer").css("background-color", "#bd2130");
+         $("#Lazer").css("border-color", "#FF0000");
+         
+         $(".lazerrgb").css("background-color", "#A4A4A4");
+         $(".Lazerrgb").css("border-color", "#848484");
+         
+         laserOff();
+         $("#off").show();
+         $("#on").hide(); 
+	   }
+	   
+	   if(action == false){
+         $("#Buzzer").css("background-color", "#bd2130");
+         $("#Buzzer").css("border-color", "#FF0000");
+         
+         $(".buzzerrgb").css("background-color", "#A4A4A4");
+         $(".buzzerrgb").css("border-color", "#848484");   
+         
+         BuzzerOff();
+         $("#off2").show();
+         $("#on2").hide();
+	   }	
+	   
+	   if(action == false){
+         $("#Rgb").css("background-color", "#bd2130");
+         $("#Rgb").css("border-color", "#FF0000");
+         
+         $(".rgbrgb").css("background-color", "#A4A4A4");
+         $(".rgbrgb").css("border-color", "#848484");  
+         
+         $("#off3").show();
+         $("#on3").hide();
+	   }	   
+
+	   
+	  /* 전진 키 땠을때 */	  
+      if(keyValue[87]=='up')
+      { 
+    	 console.log(keyValue[2]);
+         console.log("앞으로 끝")
+         $("#up").css("background-color", "#bd2130");
+         $("#up").css("border-color", "#FF0000");
+         
+         $("#acel").css("width","70px");
+         $("#acel").css("height","70px");   
+         keyValue[87]=''
+         //MotorBreak();
+      }
+      /* 후진 키 땠을때 */
+      if(keyValue[83]=='up')
+      {
+         console.log("뒤로 끝")
+         $("#down").css("background-color","#bd2130");
+         $("#down").css("border-color", "#FF0000");
+         keyValue[83]=''
+         //MotorBackword()
+      }
+      /* 우회전 키 땠을때 */
+      if(keyValue[68]=='up')
+      {
+         console.log("우회전 끝")
+         $("#right").css("background-color", "#bd2130");
+         $("#right").css("border-color", "#FF0000");
+         
+         $("#handimgF").css("transition", "transform 0.5s")
+   	  	 $("#handimgF").css("transform", "rotate(0deg)")
+         keyValue[68]=''
+         TurnStop()
+      }
+      /* 좌회전 키 땠을때 */
+      if(keyValue[65]=='up')
+      {
+         console.log("좌회전 끝")
+         $("#left").css("background-color", "#bd2130");
+         $("#left").css("border-color", "#FF0000");
+         
+         $("#handimgF").css("transition", "transform 0.5s")
+   	     $("#handimgF").css("transform", "rotate(0deg)")
+         keyValue[65]=''
+         TurnStop()
+      }
+   	  /* 정지? */   
+ 	  if(keyValue[32]=='up')
+      {
+         console.log("정지 끝")
+         $("#stop").css("background-color", "#bd2130");
+         $("#stop").css("border-color", "#FF0000");
+         
+         $("#break").css("width","90px");
+         $("#break").css("height","90px");
+         $("#break").css("margin-right","0px"); 
+         keyValue[32]=''
+         MotorStop()
+      }       
+      /* 카메라 정지 키 땠을때 */
+      if (keyValue[38]=='up') {
+//     	  console.log("카메라 스톱")
+		  $("#up1").css("background-color", "#bd2130");
+		  $("#up1").css("border-color", "#FF0000");  
+    	  	CameraTurnStop()
+		}
+      /* 카메라 정지 키 땠을때 */
+      if (keyValue[40]=='up') {
+//     	  	console.log("카메라 스톱")
+		  $("#down1").css("background-color", "#bd2130");
+		  $("#down1").css("border-color", "#FF0000");  
+			CameraTurnStop()
+		}
+      /* 카메라 좌회전 키 땠을때 */
+      if (keyValue[37]=='up') {
+//     	  console.log("카메라 왼쪽 스톱")
+		  $("#left1").css("background-color", "#bd2130");
+		  $("#left1").css("border-color", "#FF0000");  
+    	  	CameraHorizonTurnStop()
+		}
+      /* 카메라 우회전 키 땠을때 */
+      if (keyValue[39]=='up') {
+    	  console.log("카메라 오른쪽 스톱")
+		  $("#right1").css("background-color", "#bd2130");
+		  $("#right1").css("border-color", "#FF0000");  
+    	  	CameraHorizonTurnStop()
+		}
+      /* 레이저 키 땠을때 */
+      if (keyValue[81]=='up') {
+	     keyValue[81]=''
+	     laserOff()
+         $("#Lazer").css("background-color", "#bd2130");
+         $("#Lazer").css("border-color", "#FF0000");
+         $(".lazerrgb").css("background-color", "#A4A4A4");
+         $(".Lazerrgb").css("border-color", "#848484");
+         
+         $("#off").show();
+         $("#on").hide();
+// 	     console.log("삠삠 스탑")
+	  }
+      /* 부저 키 땠을때 */
+      if (keyValue[69]=='up') {
+    	  keyValue[69]=''
+    	  BuzzerOff()
+         $("#Buzzer").css("background-color", "#bd2130");
+         $("#Buzzer").css("border-color", "#FF0000");
+         $(".buzzerrgb").css("background-color", "#A4A4A4");
+         $(".buzzerrgb").css("border-color", "#848484");   
+         
+         $("#off2").show();
+         $("#on2").hide();
+//     	  console.log("빵빵 스탑")
+      }
+      /* 정지 키 땠을때 */
+      if(keyValue[32]=='up')
+      {
+//          console.log("정지 스탑")
+         $("#stop").css("background-color", "#bd2130");
+         $("#stop").css("border-color", "#FF0000");
+      }
+      /* 빨파초 키 땠을때 */
+      if(keyValue[82]=='up')
+      {
+//          console.log("빨파초 스탑")
+         $("#Rgb").css("background-color", "#bd2130");
+         $("#Rgb").css("border-color", "#FF0000");
+         $(".rgbrgb").css("background-color", "#A4A4A4");
+         $(".rgbrgb").css("border-color", "#848484");  
+         
+         $("#off3").show();
+         $("#on3").hide();
+      }
+   }
+
+/* 키를 눌렀을 때 ------------------------------------------------------------- */ 
+ //전진
+ var checkT = false;   
+ //정지
+ var checkA = false;   
+ //후진
+ var checkB = false;
+ //좌회전
+ var checkL = false;  
+ //우회전
+ var checkR = false;
+ //카메라 위회전
+ var checkCU = false;
+ //카메라 아래회전
+ var checkCD = false;
+ //카메라 좌회전
+ var checkCL = false;
+ //카메라 우회전
+ var checkCR = false; 
+ //레이저
+ var checkLAZER = false;
+ //부저
+ var checkBUZZER = false;
+ //엘이디
+ var checkRGB = false; 
+ 
+ 
+	/* 엑셀 밟았을 때 트루 */
+	$("#up").on("touchstart", function(event) {
+	      checkT = true;
+	   });
+	
+	/* 엑셀 땠을 때 펄쓰 */
+	$("#up").on("touchend", function(event) {
+	     checkT = false;
+	     stopInterval(checkT)
+	 });
+	
+	/* 정지 눌렀을 때 */
+	$("#stop").on("touchstart", function(event) {
+		checkA = true;
+	   });
+	
+	/* 정지 땠을 때 */  
+	$("#stop").on("touchend", function(event) {
+		checkA = false;
+	     stopInterval(checkA)
+	 });
+	
+	/* 후진 눌렀을 때 */
+	$("#down").on("touchstart", function(event) {
+		checkB = true;
+	   });
+	
+	/* 후진 땠을 때 */  
+	$("#down").on("touchend", function(event) {
+		checkB = false;
+	     stopInterval(checkB)
+	 });
+	
+	/* 좌회전 눌렀을 때 */
+	$("#left").on("touchstart", function(event) {
+		checkL = true;
+	   });
+	/* 좌회전 땠을 때 */  
+	$("#left").on("touchend", function(event) {
+		checkL = false;
+	     stopInterval(checkL)
+	 });	
+	
+	/* 우회전 눌렀을 때 */
+	$("#right").on("touchstart", function(event) {
+		checkR = true;
+	   });
+	
+	/* 우회전 땠을 때 */  
+	$("#right").on("touchend", function(event) {
+		checkR = false;
+	     stopInterval(checkR)
+	 });	
+	
+	//카메라 조종 터치 눌렀을 때------------------------------	
+	/* 카메라 위 눌렀을 때 */
+	$("#up1").on("touchstart", function(event) {
+		checkCU = true;
+	   });
+	
+	/* 카메라 위 땠을 때 */  
+	$("#up1").on("touchend", function(event) {
+		checkCU = false;
+	     stopInterval(checkCU)
+	 });
+	
+	/* 카메라 아래 눌렀을 때 */
+	$("#down1").on("touchstart", function(event) {
+		checkCD = true;
+	   });
+	
+	/* 후진 땠을 때 */  
+	$("#down1").on("touchend", function(event) {
+		checkCD = false;
+	     stopInterval(checkCD)
+	 });
+	
+	/* 카메라 좌 눌렀을 때 */
+	$("#left1").on("touchstart", function(event) {
+		checkCL = true;
+	   });
+	
+	/* 카메라 좌 땠을 때 */  
+	$("#left1").on("touchend", function(event) {
+		checkCL = false;
+	     stopInterval(checkCL)
+	 });	
+	
+	/* 카메라 우 눌렀을 때 */
+	$("#right1").on("touchstart", function(event) {
+		checkCR = true;
+	   });
+	
+	/* 카메라 우 땠을 때 */  
+	$("#right1").on("touchend", function(event) {
+		checkCR = false;
+	     stopInterval(checkCR)
+	 });	
+	
+	//센서 조종 터치 눌렀을 때------------------------------checkLAZER  checkBUZZER  checkRGB
+	/* 레이저 눌렀을 때 */
+	$("#Lazer").on("touchstart", function(event) {
+		checkLAZER = true;
+	   });
+	
+	/* 레이저 땠을 때 */  
+	$("#Lazer").on("touchend", function(event) {
+		checkLAZER = false;
+	     stopInterval(checkLAZER)
+	 });	
+	
+	/* 부저 눌렀을 때 */
+	$("#Buzzer").on("touchstart", function(event) {
+		checkBUZZER = true;
+	   });
+	
+	/* 부저 땠을 때 */  
+	$("#Buzzer").on("touchend", function(event) {
+		checkBUZZER = false;
+	     stopInterval(checkBUZZER)
+	 });	
+	
+	/* Rgb 눌렀을 때 */
+	$("#Rgb").on("touchstart", function(event) {
+		checkRGB = true;
+	   });
+	
+	/* Rgb 땠을 때 */  
+	$("#Rgb").on("touchend", function(event) {
+		checkRGB = false;
+	     stopInterval(checkRGB)
+	 });	
+	
+   setInterval(function(action){
+	   //자동차 조종 터치 눌렀을때--------------------------------------------      	   
+	   if(checkT == true){
+         $("#up").css("background-color", "#2E64FE");
+         $("#up").css("border-color", "#0040FF");
+         
+         $("#acel").css("width","64px");
+         $("#acel").css("height","64px"); 
+         MotorAccel();
+	   }	  
+   
+	   if(checkA == true){
+         $("#stop").css("background-color", "#2E64FE");
+         $("#stop").css("border-color", "#0040FF");
+         MotorBreak();
+	   }	  
+	   
+	   if(checkB == true){
+         $("#down").css("background-color", "#2E64FE");
+         $("#down").css("border-color", "#0040FF");
+         
+         $("#break").css("width","84px");
+         $("#break").css("height","84px"); 
+         $("#break").css("margin-right","6px");
+         MotorBackword();
+	   }	   
+	   
+	   if(checkL == true){
+         $("#left").css("background-color", "#2E64FE");
+         $("#left").css("border-color", "#0040FF");
+         
+         $("#handimgF").css("transition", "transform 0.5s")
+    	 $("#handimgF").css("transform", "rotate(-60deg)")
+         TurnLeft();
+	   }	  
+	   
+	   if(checkR == true){
+         $("#right").css("background-color", "#2E64FE");
+         $("#right").css("border-color", "#0040FF");
+
+    	 $("#handimgF").css("transition", "transform 0.5s")
+    	 $("#handimgF").css("transform", "rotate(60deg)")
+         TurnRight();
+	   }		   
+	   
+	   //카메라 조종 터치 눌렀을 때------------------
+	   if(checkCU == true){
+         $("#up1").css("background-color", "#2E64FE");
+         $("#up1").css("border-color", "#0040FF");	         
+         CameraUp();
+	   }	  
+	   
+	   if(checkCD == true){
+         $("#down1").css("background-color", "#2E64FE");
+         $("#down1").css("border-color", "#0040FF");
+         CameraDown();
+	   }	   
+	   
+	   if(checkCL == true){
+         $("#left1").css("background-color", "#2E64FE");
+         $("#left1").css("border-color", "#0040FF");
+         CameraLeft();
+	   }	  
+	   
+	   if(checkCR == true){
+         $("#right1").css("background-color", "#2E64FE");
+         $("#right1").css("border-color", "#0040FF");
+         CameraRight();
+	   }		   
+	   
+	   //센서 조종 터치 눌렀을 때------------------
+	   if(checkLAZER == true){
+         $("#Lazer").css("background-color", "#2E64FE");
+         $("#Lazer").css("border-color", "#0040FF");	         
+         laserOn();
+         
+         $(".lazerrgb").css("background-color", "#00FF00");
+         $(".Lazerrgb").css("border-color", "#82FA58");
+
+         $("#on").show();
+         $("#off").hide(); 
+	   }	  
+	   
+	   if(checkBUZZER == true){
+         $("#Buzzer").css("background-color", "#2E64FE");
+         $("#Buzzer").css("border-color", "#0040FF");
+         BuzzerOn();
+         
+         $(".buzzerrgb").css("background-color", "#00FF00");
+         $(".buzzerrgb").css("border-color", "#82FA58");
+         
+         $("#on2").show();
+         $("#off2").hide(); 
+	   }	   
+	   
+	   if(checkRGB == true){
+         $("#Rgb").css("background-color", "#2E64FE");
+         $("#Rgb").css("border-color", "#0040FF");
+         /* 넣어야함 RGB */
+         
+         $(".rgbrgb").css("background-color", "#00FF00");
+         $(".rgbrgb").css("border-color", "#82FA58"); 
+         
+         $("#on3").show();
+         $("#off3").hide();
+	   }		   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   /* 전진 키 눌렀을때 */   
+      if(keyValue[87]=='down')
+      {
+         console.log("앞으로")
+         $("#up").css("background-color", "#2E64FE");
+         $("#up").css("border-color", "#0040FF");
+         
+         $("#acel").css("width","64px");
+         $("#acel").css("height","64px"); 
+         MotorAccel();
+  	 }
+      /* 후진 키 눌렀을때 */
+      if(keyValue[83]=='down')
+      {
+         console.log("뒤로")
+         $("#down").css("background-color", "#2E64FE");
+         $("#down").css("border-color", "#0040FF");     
+         MotorBackword();
+      }
+   
+      /* 우회전 키 눌렀을때 */
+      if(keyValue[68]=='down')
+      {
+         console.log("우회전")
+         $("#right").css("background-color", "#2E64FE");
+         $("#right").css("border-color", "#0040FF");
+         
+         $("#handimgF").css("transition", "transform 0.5s")
+    	 $("#handimgF").css("transform", "rotate(60deg)")
+         TurnRight();
+      }   
+      /* 좌회전 키 눌렀을때 */
+      if(keyValue[65]=='down')
+      {
+         console.log("좌회전")
+         $("#left").css("background-color", "#2E64FE");
+         $("#left").css("border-color", "#0040FF");
+         
+         $("#handimgF").css("transition", "transform 0.5s")
+    	 $("#handimgF").css("transform", "rotate(-60deg)")
+         TurnLeft();
+      }
+      /* 카메라 위로 키 눌렀을때 */
+      if (keyValue[38]=='down') {
+//     	  console.log("카메라 위로")
+         $("#up1").css("background-color", "#2E64FE");
+         $("#up1").css("border-color", "#0040FF");	 
+    	  	CameraUp()
+		}
+      /* 카메라 아래 키 눌렀을때 */
+      if (keyValue[40]=='down') {
+//     	  	console.log("카메라 아래로")
+         $("#down1").css("background-color", "#2E64FE");
+         $("#down1").css("border-color", "#0040FF");	 
+			CameraDown()
+		}
+      /* 카메라 좌회전 키 눌렀을때 */
+      if (keyValue[37]=='down') {
+//     	  	console.log("카메라 왼쪽")
+         $("#left1").css("background-color", "#2E64FE");
+         $("#left1").css("border-color", "#0040FF");	 
+			CameraLeft()
+		}
+      /* 카메라 우회전 키 눌렀을때 */
+      if (keyValue[39]=='down') {
+//     	  	console.log("카메라 오른쪽")
+         $("#right1").css("background-color", "#2E64FE");
+         $("#right1").css("border-color", "#0040FF");	 
+			CameraRight()
+		}
+      /* 정지 키 눌렀을때 */
+      if(keyValue[32]=='down')
+      {
+//          console.log("정지")
+         $("#stop").css("background-color", "#2E64FE");
+         $("#stop").css("border-color", "#0040FF");
+         
+         $("#break").css("width","84px");
+         $("#break").css("height","84px"); 
+         $("#break").css("margin-right","6px");
+         MotorBreak();
+      }
+      /* 레이저 키 눌렀을때 */
+      if (keyValue[81]=='down') {
+    	  laserOn();
+         $("#Lazer").css("background-color", "#2E64FE");
+         $("#Lazer").css("border-color", "#5882FA");
+         $(".lazerrgb").css("background-color", "#00FF00");
+         $(".Lazerrgb").css("border-color", "#82FA58");
+
+         $("#on").show();
+         $("#off").hide();
+    	  console.log("삠삠")
+      }
+      /* 부저 키 눌렀을때 */
+      if (keyValue[69]=='down') {
+    	  BuzzerOn()
+         $("#Buzzer").css("background-color", "#2E64FE");
+         $("#Buzzer").css("border-color", "#5882FA");
+         $(".buzzerrgb").css("background-color", "#00FF00");
+         $(".buzzerrgb").css("border-color", "#82FA58");
+         
+         $("#on2").show();
+         $("#off2").hide();
+//     	  console.log("빵빵")
+      }
+      /* 빨파초 키 눌렀을때 */
+      if (keyValue[82]=='down') {
+         $("#Rgb").css("background-color", "#2E64FE");
+         $("#Rgb").css("border-color", "#5882FA");
+         $(".rgbrgb").css("background-color", "#00FF00");
+         $(".rgbrgb").css("border-color", "#82FA58"); 
+         
+         $("#on3").show();
+         $("#off3").hide();
+//     	  console.log("빨파초 삐용")
+      }
+   }, 30);
+   /* 키 눌렀을 때 이벤트를 실행하겠다 */
+   document.addEventListener('keydown', function(event) {
+      //event.preventDefault();
+      keyValue[event.keyCode] = 'down';
+   }, true);
+   /* 키 땠을 때 이벤트를 실행하겠다 */
+   document.addEventListener('keyup', function(event) {   
+	  //event.preventDefault();
+      keyValue[event.keyCode] = 'up';
+      stopInterval()
+   }, true);
+   
+
+ /* HICHART MENU*********************************************************************************** */
+ //속도 게이지
+ Highcharts.chart('container1', {
+	exporting: { enabled:false},
+     chart: {
+         type: 'gauge',
+         plotBackgroundColor: null,
+         plotBackgroundImage: null,
+         plotBorderWidth: 0,
+         plotShadow: false
+     },
+
+     title: {
+         text: 'Speed moeter'
+     },
+
+     pane: {
+         startAngle: -150,
+         endAngle: 150,
+         background: [{
+             backgroundColor: {
+                 linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+                 stops: [
+                     [0, '#FFF'],
+                     [1, '#333']
+                 ]
+             },
+             borderWidth: 0,
+             outerRadius: '109%'
+         }, {
+             backgroundColor: {
+                 linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+                 stops: [
+                     [0, '#333'],
+                     [1, '#FFF']
+                 ]
+             },
+             borderWidth: 1,
+             outerRadius: '107%'
+         }, {
+             // default background
+         }, {
+             backgroundColor: '#DDD',
+             borderWidth: 0,
+             outerRadius: '105%',
+             innerRadius: '103%'
+         }]
+     },
+
+     // the value axis
+     yAxis: {
+         min: 0,
+         max: 210,
+
+         minorTickInterval: 'auto',
+         minorTickWidth: 1,
+         minorTickLength: 10,
+         minorTickPosition: 'inside',
+         minorTickColor: '#666',
+
+         tickPixelInterval: 30,
+         tickWidth: 2,
+         tickPosition: 'inside',
+         tickLength: 10,
+         tickColor: '#666',
+         labels: {
+             step: 2,
+             rotation: 'auto'
+         },
+         title: {
+             text: 'km/h'
+         },
+         plotBands: [{
+             from: 0,
+             to: 50,
+             color: '#55BF3B' // green
+         }, {
+             from: 50,
+             to: 120,
+             color: '#DDDF0D' // yellow
+         }, {
+             from: 120,
+             to: 210,
+             color: '#DF5353' // red
+         }]
+     },
+
+     series: [{
+         name: 'Speed',
+         data: [checkspeed /20],
+         tooltip: {
+             valueSuffix: ' km/h'
+         }
+     }]
+
+ },
+ // Add some life
+ function (chart) {
+     if (!chart.renderer.forExport) {
+         setInterval(function () {
+             var point = chart.series[0].points[0],
+                 newVal,
+                 inc = Math.round((Math.random() - 0.5) * 20);
+
+             newVal = point.y + inc;
+             if (newVal < 0 || newVal > 200) {
+                 newVal = point.y - inc;
+             }
+
+             point.update(checkspeed/20);
+
+         }, 200);
+     }
+ });
+
+//온도 센서
+ Highcharts.chart('container2', {
+     chart: {
+         type: 'spline',
+         animation: Highcharts.svg, // don't animate in old IE
+         marginRight: 10,
+         events: {
+             load: function () {
+
+                 // set up the updating of the chart each second
+                 var series = this.series[0];
+                 setInterval(function () {
+                     var x = (new Date()).getTime(), // current time
+                         y = checktemperature;
+                     series.addPoint([x, y], true, true);
+                 }, 1000);
+             }
+         }
+     },
+
+     time: {
+         useUTC: false
+     },
+
+     title: {
+         text: 'Temperature'
+     },
+
+     accessibility: {
+         announceNewData: {
+             enabled: true,
+             minAnnounceInterval: 15000,
+             announcementFormatter: function (allSeries, newSeries, checktemperature) {
+                 if (checktemperature) {
+                     return 'New point added. Value: ' + checktemperature.y;
+                 }
+                 return false;
+             }
+         }
+     },
+
+     xAxis: {
+         type: 'datetime',
+         tickPixelInterval: 150
+     },
+
+     yAxis: {
+         title: {
+             text: 'Value'
+         },
+         plotLines: [{
+             value: 0,
+             width: 1,
+             color: '#808080'
+         }]
+     },
+
+     tooltip: {
+         headerFormat: '<b>{series.name}</b><br/>',
+         pointFormat: '{point.x:%Y-%m-%d %H:%M:%S}<br/>{point.y:.2f}'
+     },
+
+     legend: {
+         enabled: false
+     },
+
+     exporting: {
+         enabled: false
+     },
+
+     series: [{
+         name: 'Live Temperature',
+         data: (function () {
+             // generate an array of random data
+             var data = [],
+                 time = (new Date()).getTime(),
+                 i;
+
+             for (i = -19; i <= 0; i += 1) {
+                 data.push({
+                     x: time + i * 1000,
+                     y: Math.random()
+                 });
+             }
+             return data;
+         }())
+     }]
+ });		//checktemperature
+
+//조도 센서
+Highcharts.chart('container3', {
+     chart: {
+         type: 'spline',
+         animation: Highcharts.svg, // don't animate in old IE
+         marginRight: 10,
+         events: {
+             load: function () {
+
+                 // set up the updating of the chart each second
+                 var series = this.series[0];
+                 setInterval(function () {
+                     var x = (new Date()).getTime(), // current time
+                         y = checkillumination;
+                     series.addPoint([x, y], true, true);
+                 }, 1000);
+             }
+         }
+     },
+
+     time: {
+         useUTC: false
+     },
+
+     title: {
+         text: 'Luz'
+     },
+
+     accessibility: {
+         announceNewData: {
+             enabled: true,
+             minAnnounceInterval: 15000,
+             announcementFormatter: function (allSeries, newSeries, checkillumination) {
+                 if (checktemperature) {
+                     return 'New point added. Value: ' + checkillumination.y;
+                 }
+                 return false;
+             }
+         }
+     },
+
+     xAxis: {
+         type: 'datetime',
+         tickPixelInterval: 150
+     },
+
+     yAxis: {
+         title: {
+             text: 'Value'
+         },
+         plotLines: [{
+             value: 0,
+             width: 1,
+             color: '#808080'
+         }]
+     },
+
+     tooltip: {
+         headerFormat: '<b>{series.name}</b><br/>',
+         pointFormat: '{point.x:%Y-%m-%d %H:%M:%S}<br/>{point.y:.2f}'
+     },
+
+     legend: {
+         enabled: false
+     },
+
+     exporting: {
+         enabled: false
+     },
+
+     series: [{
+         name: 'Live Luz',
+         data: (function () {
+             // generate an array of random data
+             var data = [],
+                 time = (new Date()).getTime(),
+                 i;
+
+             for (i = -19; i <= 0; i += 1) {
+                 data.push({
+                     x: time + i * 1000,
+                     y: Math.random()
+                 });
+             }
+             return data;
+         }())
+     }]
+ });		//checktemperature
+
+// The speed gauge
+var chartSpeed = Highcharts.chart('container-speed', Highcharts.merge(gaugeOptions, {
+    yAxis: {
+        min: 0,
+        max: 100,
+        title: {
+            text: 'Lux'
+        }
+    },
+
+    credits: {
+        enabled: false
+    },
+
+    series: [{
+        name: 'Lux',
+        data: [0],
+        dataLabels: {
+            format:
+                '<div style="text-align:center; margin-top:-50px;">' +
+                '<span style="font-size:25px;">{y} Lux</span>' +
+                '</div>'
+        },
+        tooltip: {
+            valueSuffix: ' Lux'
+        }
+    }]
+
+}));
+
+// Bring life to the dials
+setInterval(function () {
+    // Speed
+    var point,
+        newVal,
+        inc;
+
+    if (chartSpeed) {
+        point = chartSpeed.series[0].points[0];
+        inc = Math.round((255-checkillumination)/255 * 100);
+        newVal = point.y + inc;
+
+        if (newVal < 0 || newVal > 200) {
+            newVal = point.y - inc;
+        }
+
+        point.update(checkillumination);
+    }
+}, 200);
 
 </script>
 </html>

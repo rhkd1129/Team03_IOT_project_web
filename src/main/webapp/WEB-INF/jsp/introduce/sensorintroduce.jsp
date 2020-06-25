@@ -63,11 +63,12 @@
 			      <span class="mo-menu-title">TEAM3 Page</span>
 			      <ul>
 			        <li class="menu-label"><a href="${pageContext.request.contextPath}/home/main.do">메인 페이지</a></li>
-			        <li class="sub-menu"><a href="${pageContext.request.contextPath}/introduce/memberintroduce.do">팀원 소개</a></li>
+			        <li class="sub-menu"><a href="${pageContext.request.contextPath}/introduce/memberintroduce.do">안드로이드 소개</a></li>
 			        <li class="menu-label"><a href="${pageContext.request.contextPath}/introduce/sensorintroduce.do">부품 소개</a></li>
 			        <li class="sub-menu"><a href="${pageContext.request.contextPath}/CarView1/Carmain1.do">센서 차트 페이지</a></li>
 			        <li class="menu-label"><a href="${pageContext.request.contextPath}/CarView2/Carmain2.do">차량 조종 페이지</a></li>
-					<li class="sub-menu"><a href="${pageContext.request.contextPath}/home/Android.do">안드로이드 뷰 페이지</a></li>
+			        <li class="sub-menu"><a href="${pageContext.request.contextPath}/home/Android.do">안드로이드 뷰 페이지</a></li>
+			        <li class="menu-label"><a href="${pageContext.request.contextPath}/home/UIView.do">차량 실험 페이지</a></li>
 			      </ul>
 			</div><!--메뉴전체 판넬 -->
 			

@@ -23,9 +23,25 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
+<!-- HICHAR -->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<!-- BOOTSTRAP -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 <!-- MQTT -->
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/CarView2/Carmain2css.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
+
+<!-- Google API master key-->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c4cbc537fd4f8620faa5b7cd5b4ffaad"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c4cbc537fd4f8620faa5b7cd5b4ffaad&libraries=services,clusterer,drawing"></script>
+
 </head>
 <body>
 	<!--nav start---------------------------------------------------------------------------------------  -->
@@ -59,11 +75,12 @@
 			      <span class="mo-menu-title">TEAM3 Page</span>
 			      <ul>
 			        <li class="menu-label"><a href="${pageContext.request.contextPath}/home/main.do">메인 페이지</a></li>
-			        <li class="sub-menu"><a href="${pageContext.request.contextPath}/introduce/memberintroduce.do">팀원 소개</a></li>
+			        <li class="sub-menu"><a href="${pageContext.request.contextPath}/introduce/memberintroduce.do">안드로이드 소개</a></li>
 			        <li class="menu-label"><a href="${pageContext.request.contextPath}/introduce/sensorintroduce.do">부품 소개</a></li>
-			        <li class="sub-menu"><a href="${pageContext.request.contextPath}/CarView1/Carmain1.do">센서 차트 페이지</a></li>		       			        
+			        <li class="sub-menu"><a href="${pageContext.request.contextPath}/CarView1/Carmain1.do">센서 차트 페이지</a></li>
 			        <li class="menu-label"><a href="${pageContext.request.contextPath}/CarView2/Carmain2.do">차량 조종 페이지</a></li>
 			        <li class="sub-menu"><a href="${pageContext.request.contextPath}/home/Android.do">안드로이드 뷰 페이지</a></li>
+			        <li class="menu-label"><a href="${pageContext.request.contextPath}/home/UIView.do">차량 실험 페이지</a></li>
 			      </ul>
 			</div><!--메뉴전체 판넬 -->
 			
@@ -83,12 +100,6 @@
 						<img id="handimgF" src="${pageContext.request.contextPath}/resource/img/UIimg/HAND.png">
 						<img id="break" src="${pageContext.request.contextPath}/resource/img/UIimg/break.png">
 						<img id="acel" src="${pageContext.request.contextPath}/resource/img/UIimg/acel.png">
-					
-							
-						
-						
-						
-						
 						
 						<!-- 1번 레이저 센서 똑딱이 버튼 -->						
 						<img id="on" src="${pageContext.request.contextPath}/resource/img/투명/전원on.png">
@@ -102,19 +113,57 @@
 						<img id="on3" src="${pageContext.request.contextPath}/resource/img/투명/전원on.png">
 						<img id="off3" src="${pageContext.request.contextPath}/resource/img/투명/전원off.png">
 											
-					
-					
-					
-					
-					
-					
-					</div>						
+						<!-- 와이퍼 작동  -->
+						<img id="wifer1" src="${pageContext.request.contextPath}/resource/img/투명/와이퍼2.png">
+						<div class="wifer1"></div>
+
+						<!-- 계기판 작동  -->
+						<img id="speedcheck" src="${pageContext.request.contextPath}/resource/img/투명/계기판1.jpg">
+						
+						<!-- 네비게이션 작동 -->
+						<div class="navi">
+							<div id="map" class="w3-container w3-center w3-animate-zoom"></div>
+						</div>
+									
+					</div>		<!--	 w3-animate-fading		 -->
 			</div>
 		</div>
 	</div>
+<figure class="highcharts-figure1">
+    <div id="container1"></div>
+</figure>
 </body>
 <!-- -------------------------------------------------------------------------------- -->
 <script type="text/javascript">
+//지도 API 시작-------------------------------------------------------------------------------------------
+//지도를 담을 영역의 DOM 레퍼런스
+var container = document.getElementById('map'); 
+
+//지도를 생성할 때 필요한 기본 옵션
+var options = { 
+	center: new kakao.maps.LatLng(37.495081, 127.122498), //지도의 중심좌표
+	level: 4 //지도의 레벨(확대, 축소 정도)
+	//IT 벤쳐타워 위치 : 37.495222, 127.122230 / 37.495081, 127.122498
+};
+
+//지도 생성 및 객체 리턴
+var map = new kakao.maps.Map(container, options); 
+
+//지도에 표시할 원을 생성
+var circle = new kakao.maps.Circle({
+  center : new kakao.maps.LatLng(37.495081, 127.122498),  // 원의 중심좌표  
+  radius: 7, // 미터 단위의 원의 반지름
+  strokeWeight: 1, // 선의 두께
+  strokeColor: '#FA5858', // 선의 색깔
+  strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명
+  strokeStyle: 'dashed', // 선의 스타일 
+  fillColor: '#FF0000', // 채우기 색깔
+  fillOpacity: 0.8  // 채우기 불투명도  
+}); 
+
+//지도에 원을 표시
+circle.setMap(map); 
+//지도 API 끝-------------------------------------------------------------------------------------------
 $("#on").hide();
 $("#off").show();
 
@@ -124,6 +173,24 @@ $("#off2").show();
 $("#on3").hide();
 $("#off3").show();
 
+// $(".navi").hide();
+$("#map").hide();
+
+//네비게이션 띄우기
+document.addEventListener('keydown', function(event) {
+   if (event.keyCode === 78) {
+// 	  $(".navi").show();
+      $("#map").show();
+   };
+}, true);
+
+//네비게이션 끄기
+document.addEventListener('keydown', function(event) {
+   if (event.keyCode === 66) {
+// 	  $(".navi").hide();
+      $("#map").hide();      
+   };
+}, true);
 
 /* 각각 차 화면 이동 */
 $(".Team3Car1").click(function(){
@@ -158,8 +225,6 @@ $(document).ready(function(){
   });
 
 });
-
-
 
 /* MQTT------------------------------------------ */
 /* MQTT 연결 (광휘컴퓨터) */
@@ -547,9 +612,32 @@ function onMessageArrived(message) {
          $("#off3").show();
          $("#on3").hide();
       }
+      /* ----------------------------------------------------- */
+	   /* 와이퍼1  땠을 때*/
+      if(keyValue[77]=='up')
+      {
+         $(".wifer1").css("transition", "transform 1s");	//조종키
+     	 $(".wifer1").css("transform", "rotate(200deg)");
+
+         $("#wifer1").css("transition", "transform 1s");	//와이퍼
+    	 $("#wifer1").css("transform", "rotate(-5deg)");
+    	 $("#wifer1").css("margin-top", "318px");
+  	 }  
+      
    }
    /* 키를 눌렀을 때 ------------------------------------------------- */
    setInterval(function(action){
+	   /* 와이퍼1  눌렀을 때*/
+      if(keyValue[77]=='down')
+      {
+         $(".wifer1").css("transition", "transform 1s");	//조종키
+     	 $(".wifer1").css("transform", "rotate(225deg)");
+     	 
+         $("#wifer1").css("transition", "transform 1s");	//와이퍼
+    	 $("#wifer1").css("transform", "rotate(130deg)");
+    	 $("#wifer1").css("transform-origin", "right bottom");
+  	 }  
+	  
 	   /* 전진 키 눌렀을때 */
       if(keyValue[87]=='down')
       {
@@ -667,7 +755,9 @@ function onMessageArrived(message) {
          $("#off3").hide();
     	  console.log("빨파초 삐용")
       }
+      
    }, 30);
+
    /* 키 눌렀을 때 이벤트를 실행하겠다 */
    document.addEventListener('keydown', function(event) {
       //event.preventDefault();
@@ -680,13 +770,120 @@ function onMessageArrived(message) {
       stopInterval()
    }, true);
 
+   
+   /* HICHART MENU*********************************************************************************** */
+ //속도 게이지
+ Highcharts.chart('container1', {
+ 	exporting: { enabled:false},
+     chart: {
+         type: 'gauge',
+         plotBackgroundColor: null,
+         plotBackgroundImage: null,
+         plotBorderWidth: 0,
+         plotShadow: false
+     },
 
+     title: {
+         text: 'Speed moeter'
+     },
 
+     pane: {
+         startAngle: -150,
+         endAngle: 150,
+         background: [{
+             backgroundColor: {
+                 linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+                 stops: [
+                     [0, '#FFF'],
+                     [1, '#333']
+                 ]
+             },
+             borderWidth: 0,
+             outerRadius: '109%'
+         }, {
+             backgroundColor: {
+                 linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+                 stops: [
+                     [0, '#333'],
+                     [1, '#FFF']
+                 ]
+             },
+             borderWidth: 1,
+             outerRadius: '107%'
+         }, {
+             // default background
+         }, {
+             backgroundColor: '#DDD',
+             borderWidth: 0,
+             outerRadius: '105%',
+             innerRadius: '103%'
+         }]
+     },
 
+     // the value axis
+     yAxis: {
+         min: 0,
+         max: 210,
 
+         minorTickInterval: 'auto',
+         minorTickWidth: 1,
+         minorTickLength: 10,
+         minorTickPosition: 'inside',
+         minorTickColor: '#666',
 
+         tickPixelInterval: 30,
+         tickWidth: 2,
+         tickPosition: 'inside',
+         tickLength: 10,
+         tickColor: '#666',
+         labels: {
+             step: 2,
+             rotation: 'auto'
+         },
+         title: {
+             text: 'km/h'
+         },
+         plotBands: [{
+             from: 0,
+             to: 50,
+             color: '#55BF3B' // green
+         }, {
+             from: 50,
+             to: 120,
+             color: '#DDDF0D' // yellow
+         }, {
+             from: 120,
+             to: 210,
+             color: '#DF5353' // red
+         }]
+     },
 
+     series: [{
+         name: 'Speed',
+         data: [checkspeed /20],
+         tooltip: {
+             valueSuffix: ' km/h'
+         }
+     }]
 
+ },
+ // Add some life
+ function (chart) {
+     if (!chart.renderer.forExport) {
+         setInterval(function () {
+             var point = chart.series[0].points[0],
+                 newVal,
+                 inc = Math.round((Math.random() - 0.5) * 20);
 
+             newVal = point.y + inc;
+             if (newVal < 0 || newVal > 200) {
+                 newVal = point.y - inc;
+             }
+
+             point.update(checkspeed/20);
+
+         }, 200);
+     }
+ });
 </script>
 </html>

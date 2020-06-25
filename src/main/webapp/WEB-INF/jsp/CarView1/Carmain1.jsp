@@ -76,11 +76,12 @@
 			      <span class="mo-menu-title">TEAM3 Page</span>
 			      <ul>
 			        <li class="menu-label"><a href="${pageContext.request.contextPath}/home/main.do">메인 페이지</a></li>
-			        <li class="sub-menu"><a href="${pageContext.request.contextPath}/introduce/memberintroduce.do">팀원 소개</a></li>
+			        <li class="sub-menu"><a href="${pageContext.request.contextPath}/introduce/memberintroduce.do">안드로이드 소개</a></li>
 			        <li class="menu-label"><a href="${pageContext.request.contextPath}/introduce/sensorintroduce.do">부품 소개</a></li>
 			        <li class="sub-menu"><a href="${pageContext.request.contextPath}/CarView1/Carmain1.do">센서 차트 페이지</a></li>
 			        <li class="menu-label"><a href="${pageContext.request.contextPath}/CarView2/Carmain2.do">차량 조종 페이지</a></li>
-			      	<li class="sub-menu"><a href="${pageContext.request.contextPath}/home/Android.do">안드로이드 뷰 페이지</a></li>
+			        <li class="sub-menu"><a href="${pageContext.request.contextPath}/home/Android.do">안드로이드 뷰 페이지</a></li>
+			        <li class="menu-label"><a href="${pageContext.request.contextPath}/home/UIView.do">차량 실험 페이지</a></li>
 			      </ul>
 			</div><!--메뉴전체 판넬 -->
 			
@@ -746,7 +747,7 @@ $(document).ready(function(){
 /* HICHART MENU*********************************************************************************** */
 //속도 게이지
 Highcharts.chart('container1', {
-
+	exporting: { enabled:false},
     chart: {
         type: 'gauge',
         plotBackgroundColor: null,
@@ -951,7 +952,8 @@ Highcharts.chart('container2', {
 //조도 센서
 var gaugeOptions = {
     chart: {
-        type: 'solidgauge'
+        type: 'solidgauge',
+        width: 400
     },
 
     title: null,
@@ -1040,18 +1042,23 @@ var chartSpeed = Highcharts.chart('container-speed', Highcharts.merge(gaugeOptio
 
 // Bring life to the dials
 setInterval(function () {
-	 var point, newVal, inc;
+    // Speed
+    var point,
+        newVal,
+        inc;
+
     if (chartSpeed) {
         point = chartSpeed.series[0].points[0];
         inc = Math.round((255-checkillumination)/255 * 100);
-        
-		if ( inc >= 0 || inc <= 100) {
-            newVal = inc;
+        newVal = point.y + inc;
+
+        if (newVal < 0 || newVal > 200) {
+            newVal = point.y - inc;
         }
 
-        point.update(inc);
+        point.update(checkillumination);
     }
-}, 400);
+}, 200);
 
 
 //가스 센서
@@ -1139,15 +1146,16 @@ Highcharts.chart('gascontainer', {
               if (chart.series) { // the chart may be destroyed
                   var left = chart.series[0].points[0],
                       leftVal,
-                      inc = parseInt((checkgas/ 255)* 100);
+                      inc = (parseInt(checkgas) / 255)* 100;
    
-                  if (inc >=0 || inc <=100) {
-                      leftVal =  inc;
+                  leftVal = inc;
+                  if (leftVal < 0 || checkgas > 100) {
+                      leftVal = 100 - inc;
                   }
-                  left.update(leftVal, false);
+                  left.update(checkgas, false);
                   chart.redraw();
               }
-          }, 30);
+          }, 500);
    
       });
 </script>

@@ -389,19 +389,102 @@
 }
 
 
+/* 잡기능  ----------------- */
+#wifer1{
+	width: 250px;
+	height: 30px;
+	position: absolute;
+	z-index: 10;
+	margin-left: -1020px;
+	margin-top: 318px;
+	transform : rotate(-5deg);
+}
+
+.wifer1{
+	width: 50px;
+	height: 7px;
+	z-index: 11;
+	position: absolute;
+	transform : rotate(200deg);	
+	background-color: #2E2E2E;
+	margin-left: 470px;
+	margin-top: 420px;
+	border-top-right-radius: 5px;
+}
+
+#speedcheck{
+	width: 80px;
+	height: 32px;
+	position: absolute;
+	z-index: 13;
+	margin-left: -738px;
+	margin-top: 377px;	
+	border-radius: 2px;
+    border: 2px solid #424242;
+}
+
+.navi{
+	width: 110px;
+	height: 110px;
+	position: absolute;
+	z-index: 50;
+	margin-left: 643px;
+	margin-top:230px;
+	background-color: #819FF7;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+    border: 2px solid #5882FA;
+    opacity: 0.4;
+}
+
+#map{
+	width:105px;
+	height:110px;
+	opacity: 0.5;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
 
 
+/* HICHAR MENU ******************************* */
+/* 속도 게이지 */
+.highcharts-credits{
+	opacity: 0;
+}
 
+#container1 {
+    height: 370px; 
+}
 
+.highcharts-figure1, .highcharts-data-table table {
+    min-width: 398px; 
+    max-width: 398px;
+}
 
-
-
-
-
-
-
-
-
-
-
+.highcharts-data-table table {
+    font-family: Verdana, sans-serif;
+    border-collapse: collapse;
+    border: 1px solid #EBEBEB;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+.highcharts-data-table th {
+	font-weight: 600;
+    padding: 0.5em;
+}
+.highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+    padding: 0.5em;
+}
+.highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
 
