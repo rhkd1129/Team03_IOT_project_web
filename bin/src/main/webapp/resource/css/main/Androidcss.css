@@ -1,0 +1,926 @@
+@charset "UTF-8";
+/* nav bar */
+
+.navbar{
+	width: 1440px;
+	height: 60px;
+	background-color: #424242;
+	float: left;
+}
+
+#navimglogo{
+	width: 50px;
+	height: 50px;
+	margin-left: 30px;
+	float: left;
+	margin-bottom: 10px;
+}
+
+.textmain{
+	width: 200px;
+	height: 60px;
+	font-weight: 900;
+	font-size: 25px;
+	color: white;
+	text-align: center;
+	line-height: 40px;
+}
+
+
+
+
+
+
+
+
+
+/* body */
+.bodymainbox{
+	width: 1440;
+	height: 2295px;
+	background-color: #E6E6E6;
+}
+
+#logoimg2{
+	width: 45px;
+	height: 45px;
+	cursor: pointer;
+}
+
+.TeamName{
+	font-weight: 900;
+	font-size: 25px;
+	margin-left: 20px;
+	color: white;
+	cursor: pointer;
+}
+
+.jumpbox{
+	width: 1440px;
+	height: 45px;
+}
+
+/* body */
+#backimg{
+	width: 1440px;
+	height: 2295px;
+	float: left;
+}
+
+.leftbar1{
+	position: absolute;
+	float: left;
+	margin-top: 200px;
+	width: 30px;
+	height: 200px;
+	background-color: #F78181;
+	z-index: 10;
+	border-top-right-radius: 20px;	
+	font-size: 20px;
+	font-weight: bold;
+	color: white;
+	text-align: center;
+/* 	border-bottom-right-radius: 20px; */
+/*   	transition: width 3s; */
+}
+
+/* .leftbar1:hover { */
+/*   width: 300px; */
+/* } */
+
+.bodymain{
+	width: 1300px;
+	height: 800px;
+	background-color: #FFFFFF;
+	border: 1px solid #E6E6E6;
+	position: absolute;
+	float: left;
+	margin-left: 60px;
+	margin-top: 150px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	border: 1px solid #A4A4A4;
+}
+
+.bodymain2{
+	width: 1300px;
+	height: 1300px;
+	background-color: #FFFFFF;
+	border: 1px solid #E6E6E6;
+	position: absolute;
+	float: left;
+	margin-left: 60px;
+	margin-top: 1000px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	border: 1px solid #A4A4A4;
+}
+
+.Car2Introduce{
+	width: 1300px;
+	height: 50px;
+	background-color: #CED8F6;
+	float: left;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	text-align: center;
+	font-size: 30px;
+	font-weight: 900;
+	line-height: 45px;
+	color: #A4A4A4;
+}
+
+.Car2Introduce2{
+	width: 1300px;
+	height: 50px;
+	background-color: #CED8F6;
+	float: left;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	text-align: center;
+	font-size: 30px;
+	font-weight: 900;
+	line-height: 45px;
+	color: #A4A4A4;
+}
+
+.memberimgbox1{
+	width: 1300px;
+	height: 748px;
+	background-color: white;
+	float: left;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+
+.memberimgbox2{
+	width: 1300px;
+	height: 1248px;
+	background-color: white;
+	float: left;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+
+#cameraView{
+	width:1300px;
+	height: 460px;
+	z-index: 10;
+	float: left;
+}
+
+#controllimg{
+	width: 1299px;
+	height: 748px;	
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	z-index: 11;
+	position: absolute;
+	float: left;
+	margin-left: -1300px;
+}
+
+#handimgF{
+	width: 200px;
+	height:200px;
+	border-radius:85px; 
+	z-index: 12;
+	position: absolute;
+	float: left;
+	margin-left: -960px;
+	margin-top: 310px;
+}
+
+#break{
+	width: 90px;
+	height:90px;
+	border-radius:85px; 
+	z-index: 12;
+	position: absolute;
+	float: left;
+	margin-left: -900px;
+	margin-top: 495px;
+}
+
+#acel{
+	width: 70px;
+	height:70px;
+	border-radius:85px; 
+	z-index: 12;
+	position: absolute;
+	float: left;
+	margin-left: -860px;
+	margin-top: 495px;
+}
+
+#on{
+	width: 50px;
+	height: 50px;
+	z-index: 12;
+	position: absolute;
+	float: left;
+	margin-left: -708px;
+	margin-top: 478px;
+}
+
+#off{
+	width: 50px;
+	height: 50px;
+	z-index: 12;
+	position: absolute;
+	float: left;
+	margin-left: -708px;
+	margin-top: 478px;
+}
+
+#on2{
+	width: 50px;
+	height: 50px;
+	z-index: 12;
+	position: absolute;
+	float: left;
+	margin-left: -675px;
+	margin-top: 478px;
+}
+
+#off2{
+	width: 50px;
+	height: 50px;
+	z-index: 12;
+	position: absolute;
+	float: left;
+	margin-left: -675px;
+	margin-top: 478px;
+}
+
+#on3{
+	width: 50px;
+	height: 50px;
+	z-index: 12;
+	position: absolute;
+	float: left;
+	margin-left: -641px;
+	margin-top: 478px;
+}
+
+#off3{
+	width: 50px;
+	height: 50px;
+	z-index: 12;
+	position: absolute;
+	float: left;
+	margin-left: -641px;
+	margin-top: 478px;
+}
+
+/* -------------------------- */
+
+/*메뉴 들어가는 부분*/
+.panel {
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  margin-top: 61px;
+  height: 2305px;
+  width: 400px;
+  background-color: #383b42;
+}
+
+.panel .ninja-btn {
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  display: inline-block;
+  float: left;
+  cursor: pointer;
+  padding: 30.285714px 31px;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  width: 20%;
+  height: 20.18181818px;
+}
+.panel .ninja-btn span,
+.panel .ninja-btn span:before,
+.panel .ninja-btn span:after {
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  width: 40px;
+  height: 4px;
+  background-color: #1C1C1C;
+}
+.panel .ninja-btn span {
+  position: relative;
+  display: inline-block;
+  float: left;
+  margin-top: 9.09090909px;
+}
+.panel .ninja-btn span:before,
+.panel .ninja-btn span:after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+.panel .ninja-btn span:before {
+  top: -9.09090909px;
+}
+.panel .ninja-btn span:after {
+  top: 9.09090909px;
+}
+
+/*메뉴 클릭후, 메뉴 버튼을 활성화 시켰을때 속성*/
+.panel .ninja-btn.active span {
+  background-color: transparent;
+}
+.panel .ninja-btn.active span:before,
+.panel .ninja-btn.active span:after {
+  top: 0;
+}
+.panel .ninja-btn.active span:before {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+}
+.panel .ninja-btn.active span:after {
+  -webkit-transition-delay: 0.09s;
+  -moz-transition-delay: 0.09s;
+  -o-transition-delay: 0.09s;
+  -msa-transition-delay: 0.09s;
+  transition-delay: 0.09s;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+}
+.panel ul {
+  width:100%;
+  list-style-type: none;
+  position: absolute;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  top: 15%;
+  left: 0;
+  right: 60px;
+  height: auto;
+  text-align: left;
+}
+
+.panel ul li,
+.panel ul a {
+  display: inline-block;
+  float: left;
+  width: 100%;
+  line-height: 1.4;
+  padding: 0;
+  font-weight: 200;
+}
+.panel ul li{
+  height:45px;
+  border-top: 1px solid #474a50;
+}
+.panel ul li.menu-label a{
+  padding:11px 0 0 40px;
+  height:100%;
+  display:block;
+  font-size: 17px;
+  text-transform: lowercase;
+}
+.panel ul li.menu-label:first-child {
+  border-top: 0;
+}
+
+.panel ul li.menu-contacts a {
+  font-size: 16px;
+  text-transform: inherit;
+}
+
+/* 안보이는 패널위치고정 */
+.panel-overlay {
+  position: fixed;
+  top: 0;
+  z-index: 9998;
+  width: 100%;
+  height: 2370px;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+
+.panel.left {
+  left: -800px;
+}
+/*패널 버튼 부분 위치*/
+.panel.left .ninja-btn {
+  left: 790px;
+}
+/* 패널이 활성화 되었을때 */
+.panel.left.active {
+  left: 0;
+  overflow: scroll;
+}
+.panel.left.active .ninja-btn {
+  left: 100%;
+  margin-left: -90px;
+}
+
+.panel ul li.sub-menu{
+  background: #2e333c;
+  padding:11px 0 0 50px;
+}
+
+.mo-menu-title{
+	font-size: 30px;
+	color: white;
+	margin-left: 30px;
+}
+
+/* 	width: 1300px; */
+/* 	height: 1300px; */
+/* 안드로이드 컨트롤러 css */
+.hichartbox1{
+	width: 620px;
+	height: 300px;
+	background-color: white;
+	float: left;
+}
+
+.hichartbox2{
+	width: 680px;
+	height: 300px;
+	background-color: white;
+	float: left;
+}
+
+.sensorpathbox{
+	width: 1300px;
+	height: 948px;
+	background-color: blue;
+	float: left;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;		
+}
+
+/* HICHAR MENU ******************************* */
+.sensorbox1{
+	width: 308px;
+	height: 300px;	
+	float: left;
+	border-right: 2px solid #A4A4A4;
+}
+
+.sensorbox2{
+	width: 303px;
+	height: 300px;
+	float: left;
+	border-right: 2px solid #A4A4A4;		
+}
+
+#sensorbox2{
+	width: 377px;
+	height: 300px;	
+	float: left;
+	background-color: white;
+}
+
+.sensortext{
+	width: 377px;
+	height: 49px;
+	border-bottom: 1px solid #BDBDBD;
+}
+
+.textname{
+	font-size: 15px;
+	color: #848484;
+	width: 130px;
+	background-color: white;
+	float: left;
+	margin-left: 40px;
+	margin-top: 10px;
+}
+
+#sonicDistance{
+	width: 150px;
+	height: 30px;
+	margin-top: 5px;
+	float: left;
+}
+#temperature{
+	width: 150px;
+	height: 30px;
+	margin-top: 5px;
+	float: left;	
+}
+#illumination{
+	width: 150px;
+	height: 30px;
+	margin-top: 5px;
+	float: left;	
+}
+#gas{
+	width: 150px;
+	height: 30px;
+	margin-top: 5px;
+	float: left;	
+}
+#tracking{
+	width: 150px;
+	height: 30px;
+	margin-top: 5px;
+	float: left;	
+}
+#speed{
+	width: 150px;
+	height: 30px;
+	margin-top: 5px;
+	float: left;	
+}
+
+/* button css start--------- */
+.movebutton{
+	background-color: #E6E6E6;
+	width: 1300px;
+	height: 948px;
+	margin-top: 0px;
+	float: left;
+	border-bottom-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+}
+
+#left{
+	position: absolute;
+	margin-left: 50px;
+	margin-top: 500px;
+	color: #fff;
+    background-color: #bd2130;
+    border-color: #b21f2d;
+    width: 150px;
+    height: 150px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 60px;
+	border-radius: 30px;
+}
+
+#right{
+	position: absolute;	
+	margin-left: 380px;
+	margin-top: 500px;
+	color: #fff;
+    background-color: #bd2130;
+    border-color: #b21f2d;
+    width: 150px;
+    height: 150px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 60px;
+	border-radius: 30px;
+}
+
+#up{
+	position: absolute;	
+	margin-left: 215px;
+	color: #fff;
+    background-color: #bd2130;
+    border-color: #b21f2d;
+    width: 150px;
+    height: 150px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 60px;
+	margin-top: 330px;
+	border-radius: 30px;
+}
+
+#down{
+	position: absolute;
+	margin-left: 215px;	
+	margin-top: 120px;
+    color: #fff;
+    background-color: #bd2130;
+    border-color: #b21f2d;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+	vertical-align: middle;
+	font-size: 60px;
+	margin-top: 670px;
+	border-radius: 30px;
+}
+
+#stop{
+	position: absolute;
+	margin-left: 215px;	
+	margin-top: 85px;
+    color: #fff;
+    background-color: #bd2130;
+    border-color: #b21f2d;
+    width: 150px;
+    height: 150px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 60px;
+	margin-top: 500px;
+	border-radius: 30px;
+}
+
+#Lazer{
+	position: absolute;
+	margin-left: 475px;	
+	margin-top: 140px;
+    color: #fff;
+    background-color: #bd2130;
+    border-color: #b21f2d;
+    width: 120px;
+    height: 120px;
+	text-align: center;	
+	 vertical-align: middle;
+	font-size: 50px;
+	border-radius: 20px;
+}
+
+#Buzzer{
+	position: absolute;
+	margin-left: 620px;	
+	margin-top: 140px;
+    color: #fff;
+    background-color: #bd2130;
+    border-color: #b21f2d;
+    width: 120px;
+    height: 120px;
+	text-align: center;	
+	 vertical-align: middle;
+	font-size: 50px;
+	border-radius: 20px;
+}
+
+#Rgb{
+	position: absolute;
+	margin-left: 770px;	
+	margin-top: 140px;
+    color: #fff;
+    background-color: #bd2130;
+    border-color: #b21f2d;
+    width: 120px;
+    height: 120px;
+	text-align: center;	
+	vertical-align: middle;
+	font-size: 70px;
+	border-radius: 20px;
+}
+
+.lazerrgb{
+	width: 70px;
+	height: 70px;
+	border-radius: 30px;
+	background-color: #A4A4A4;
+	border: 1px solid #848484;
+	margin-left: 500px;
+	position: absolute;
+	margin-top: 30px;
+}
+
+.buzzerrgb{
+	width: 70px;
+	height: 70px;
+	border-radius: 30px;
+	background-color: #A4A4A4;
+	border: 1px solid #848484;
+	margin-left: 650px;
+	position: absolute;
+	margin-top: 30px;
+}
+
+.rgbrgb{
+	width: 70px;
+	height: 70px;
+	border-radius: 30px;
+	background-color: #A4A4A4;
+	border: 1px solid #848484;
+	margin-left: 800px;
+	position: absolute;
+	margin-top: 30px;
+}
+
+#left1{
+	position: absolute;
+	margin-left: 750px;
+	margin-top: 500px;
+	color: #fff;
+    background-color: #bd2130;
+    border-color: #b21f2d;
+    width: 150px;
+    height: 150px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 60px;
+	border-radius: 30px;
+}
+
+#right1{
+	position: absolute;	
+	margin-left: 1080px;
+	margin-top: 500px;
+	color: #fff;
+    background-color: #bd2130;
+    border-color: #b21f2d;
+    width: 150px;
+    height: 150px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 60px;
+	border-radius: 30px;
+}
+
+#up1{
+	position: absolute;	
+	margin-left: 915px;
+	color: #fff;
+    background-color: #bd2130;
+    border-color: #b21f2d;
+    width: 150px;
+    height: 150px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 60px;
+	margin-top: 330px;
+	border-radius: 30px;
+}
+
+#down1{
+	position: absolute;
+	margin-left: 915px;	
+	margin-top: 120px;
+    color: #fff;
+    background-color: #bd2130;
+    border-color: #b21f2d;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+	vertical-align: middle;
+	font-size: 60px;
+	margin-top: 670px;
+	border-radius: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+/* HICHAR MENU ******************************* */
+/* 속도 게이지 */
+.highcharts-credits{
+	opacity: 0;
+}
+
+#container1 {
+    height: 300px; 
+}
+
+.highcharts-figure1, .highcharts-data-table table {
+    min-width: 300px; 
+    max-width: 300px;
+}
+
+.highcharts-data-table table {
+    font-family: Verdana, sans-serif;
+    border-collapse: collapse;
+    border: 1px solid #EBEBEB;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+}
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+.highcharts-data-table th {
+	font-weight: 600;
+    padding: 0.5em;
+}
+.highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+    padding: 0.5em;
+}
+.highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
+
+/* 온도 센서 */
+.highcharts-background{
+	border-bottom-left-radius: 20px;
+}
+
+.highcharts-figure2, .highcharts-data-table table {
+    min-width: 300px; 
+    max-width: 300px;
+	margin-left: 5px;
+}
+
+#container2 {
+    height: 300px; 
+}
+
+.highcharts-data-table table {
+  font-family: Verdana, sans-serif;
+  border-collapse: collapse;
+  border: 1px solid #EBEBEB;
+  margin: 10px auto;
+  text-align: center;
+  width: 100%;
+  max-width: 393px;
+}
+.highcharts-data-table caption {
+  padding: 1em 0;
+  font-size: 1.2em;
+  color: #555;
+}
+.highcharts-data-table th {
+  font-weight: 600;
+  padding: 0.5em;
+}
+.highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+  padding: 0.5em;
+}
+.highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+  background: #f8f8f8;
+}
+.highcharts-data-table tr:hover {
+  background: #f1f7ff;
+}
+
+/* 조도 차트 */
+.highcharts-background{
+	border-bottom-left-radius: 20px;
+}
+
+.highcharts-figure3, .highcharts-data-table table {
+    min-width: 300px; 
+    max-width: 300px;
+	margin-left: 5px;
+}
+
+#container3 {
+    height: 300px; 
+}
+
+.highcharts-data-table table {
+  font-family: Verdana, sans-serif;
+  border-collapse: collapse;
+  border: 1px solid #EBEBEB;
+  margin: 10px auto;
+  text-align: center;
+  width: 100%;
+  max-width: 393px;
+}
+.highcharts-data-table caption {
+  padding: 1em 0;
+  font-size: 1.2em;
+  color: #555;
+}
+.highcharts-data-table th {
+  font-weight: 600;
+  padding: 0.5em;
+}
+.highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+  padding: 0.5em;
+}
+.highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+  background: #f8f8f8;
+}
+.highcharts-data-table tr:hover {
+  background: #f1f7ff;
+}
+
+
+
+
+
+
+
+
